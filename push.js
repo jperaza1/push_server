@@ -12,7 +12,7 @@ const getKey = () => {
 const addSubscriptcion = (suscripcion) => {
   suscripciones.push(suscripcion);
 
-  console.log(suscripcion);
+  console.log(suscripciones);
 
   fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify(suscripciones));
 };
