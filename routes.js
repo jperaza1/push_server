@@ -7,4 +7,10 @@ router.get("/api/key", (req, res) => {
   res.send(push.getKey());
 });
 
+router.post("/api/subscribe", (req, res) => {
+  const suscripcion = req.body;
+
+  res.json(suscripcion);
+});
+
 module.exports = router;
