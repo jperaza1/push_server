@@ -19,4 +19,15 @@ router.get("/api/deletesubscribe", (req, res) => {
   res.json("ok");
 });
 
+router.post("/api/pushAll", (req, res) => {
+  const notificacion = {
+    titulo: req.body.titulo,
+    cuerpo: req.body.cuerpo,
+    usuario: req.body.usuario,
+  };
+  push.enviarNotificacion(notificacion);
+
+  res.json(notificacion);
+});
+
 module.exports = router;
