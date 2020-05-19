@@ -15,7 +15,12 @@ const addSubscriptcion = (suscripcion) => {
   fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify(suscripciones));
 };
 
+const deleteAllSubscripction = () => {
+  fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify([]));
+};
+
 module.exports = {
   getKey,
   addSubscriptcion,
+  deleteAllSubscripction,
 };

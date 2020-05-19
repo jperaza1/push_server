@@ -13,4 +13,10 @@ router.post("/api/subscribe", (req, res) => {
   res.json(suscripcion);
 });
 
+router.get("/api/deletesubscribe", (req, res) => {
+  push.deleteAllSubscripction();
+
+  res.json("ok");
+});
+
 module.exports = router;
