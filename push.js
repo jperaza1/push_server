@@ -9,7 +9,6 @@ const getKey = () => {
 
 const addSubscriptcion = (suscripcion) => {
   const suscripciones = require("./subs-db.json");
-
   suscripciones.push(suscripcion);
   console.log(suscripciones);
   fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify(suscripciones));
