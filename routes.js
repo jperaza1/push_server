@@ -9,7 +9,7 @@ router.get("/api/key", (req, res) => {
 
 router.post("/api/subscribe", (req, res) => {
   const suscripcion = req.body;
-  console.log(suscripcion);
+  push.addSubscriptcion(suscripcion);
   res.json(suscripcion);
 });
 
