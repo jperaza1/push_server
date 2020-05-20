@@ -35,6 +35,7 @@ const enviarNotificacion = (post) => {
       suscripciones.splice(i, 1);
     });
   });
+  fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify(suscripciones));
 };
 
 module.exports = {
