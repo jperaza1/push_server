@@ -32,7 +32,7 @@ const enviarNotificacion = (post) => {
   suscripciones.forEach((suscripcion, i) => {
     webpush.sendNotification(suscripcion, JSON.stringify(post)).catch((err) => {
       console.log(err);
-      suscripcion.splice(i, 1);
+      suscripciones.splice(i, 1);
     });
   });
 };
