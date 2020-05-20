@@ -30,7 +30,9 @@ const enviarNotificacion = (post) => {
   const suscripciones = require("./subs-db.json");
 
   suscripciones.forEach((suscripcion, i) => {
-    webpush.sendNotification(suscripcion, JSON.stringify(post));
+    webpush
+      .sendNotification(suscripcion, JSON.stringify(post))
+      .catch((err) => console.log(err));
   });
 };
 
