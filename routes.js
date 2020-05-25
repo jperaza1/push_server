@@ -8,7 +8,7 @@ router.get("/api/key", (req, res) => {
 });
 
 router.post("/api/subscribe", (req, res) => {
-  console.log(req.body);
+  console.log(req);
 
   res.json("Hola Mundo");
   /*const suscripcion = req.body;
