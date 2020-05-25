@@ -10,6 +10,9 @@ router.get("/api/key", (req, res) => {
 router.post("/api/subscribe", (req, res) => {
   console.log(req);
 
+  const obj = JSON.parse(req.body.subscription);
+  console.log(obj);
+
   res.json("Hola Mundo");
   /*const suscripcion = req.body;
   push.addSubscriptcion(suscripcion);
