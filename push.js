@@ -10,11 +10,12 @@ webpush.setVapidDetails(
   vapid.privateKey
 );
 
+// Obtener el vapid publickey para enviarlo al cliente y que haga la subcripcion 
 const getKey = () => {
-  console.log(vapid.publicKey);
-  return urlsafeBase64.decode(vapid.publicKey);
+  return vapid.publicKey;
 };
 
+//Agregar la subcripcion al archivo subs-db.json
 const addSubscriptcion = (suscripcion) => {
   const suscripciones = require("./subs-db.json");
   suscripciones.push(suscripcion);
@@ -22,10 +23,12 @@ const addSubscriptcion = (suscripcion) => {
   fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify(suscripciones));
 };
 
+//Eliminar todas las subcripciones del archivo subs-db.json
 const deleteAllSubscripction = () => {
   fs.writeFileSync(`${__dirname}/subs-db.json`, JSON.stringify([]));
 };
 
+//Metodo se encarga de enviar las notificaciones a todas las subcripciones guardadas subs-db.json
 const enviarNotificacion = (post) => {
   const suscripciones = require("./subs-db.json");
 
